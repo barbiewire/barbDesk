@@ -1,22 +1,16 @@
 # barbDesk
 
-So you grabbed one of my open source projects and none of the sounds play. That's because they're uploaded to my group, and Roblox won't let audio play in a game unless the owner allows it.
+I made this for people who use my open source projects. The sounds in them are uploaded to my group, and Roblox only plays audio in games the owner allows, so in your copy a lot of them are silent.
 
-This fixes that. You run the exe with your place open in Studio and it:
+barbDesk puts them on your account instead. Open your place in Studio and run the exe. It reads the `osName` attribute on ReplicatedStorage to know which project you have (so don't delete that), downloads my original sound files into a `sfx` folder and uploads them. Then it swaps every old id in your Sounds, AudioPlayers and scripts for the new ones. For the Battlegrounds framework that's 25 sounds.
 
-- figures out which of my projects you have (it reads the `osName` attribute on ReplicatedStorage, so don't delete that)
-- finds all my sounds that are still in your place
-- downloads the original files into a `sfx` folder
-- uploads them to your account or group
-- swaps the old ids for your new ones everywhere (Sounds, AudioPlayers, scripts)
-
-If you don't like the result, just Ctrl+Z in Studio. The whole swap is one undo.
+If you don't like what it did, press Ctrl+Z in Studio and it's all undone. It's Windows only for now.
 
 ## Before you run it
 
 You need Studio open with your place, and Studio's MCP server turned on. That's in Assistant > Settings > MCP Servers > Enable Studio as MCP server. barbDesk talks to Studio through that, so there's no plugin to install.
 
-You also need an Open Cloud API key, because it has to upload audio for you.
+You also need an Open Cloud API key, since that's what it uploads with.
 
 Making one:
 
@@ -41,11 +35,11 @@ Some options if you run it from a terminal:
 
 ## Stuff to know
 
-Uploads count toward your monthly audio limit on Roblox. If you hit it, wait for it to reset and run barbDesk again, it picks up where it stopped.
+Uploads count toward your monthly audio limit on Roblox. I hit mine while testing this lol. If that happens just wait for it to reset and run barbDesk again, it picks up where it stopped.
 
-Upload as whoever owns the game. If you upload to your own account but the game belongs to a group, the sounds still won't play.
+Upload as whoever owns the game, otherwise the sounds still won't play (your own account won't work if the game belongs to a group).
 
-The sounds in here are only meant to be used with the projects they came with. Please don't reupload them for other stuff.
+The sounds in here are only meant for the projects they came with, so please don't reupload them for other stuff.
 
 ## Projects it works with right now
 
