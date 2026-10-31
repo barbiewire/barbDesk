@@ -1,0 +1,155 @@
+{
+  "osName": "Battlegrounds Framework V2 - Stage one [BAREBONES]",
+  "sounds": [
+    {
+      "id": "97326795070435",
+      "name": "spawnanim",
+      "file": "sfx/spawnanim.ogg",
+      "sha256": "c772f95b61edc14fd547a97289336d8761bffa9cc7148f2dc757adf312541601"
+    },
+    {
+      "id": "100946386285099",
+      "name": "burst2",
+      "file": "sfx/burst2.ogg",
+      "sha256": "7a16891d81ecd527c6aee82fc08f80388d026acc1944011ceadd6cc9b3eeb0a1"
+    },
+    {
+      "id": "106137402123287",
+      "name": "burst4",
+      "file": "sfx/burst4.ogg",
+      "sha256": "2493bf73e6c04e5201344186492e5906f2f599b1bc726520b3eb08202f9b8269"
+    },
+    {
+      "id": "124408811613351",
+      "name": "burst1",
+      "file": "sfx/burst1.ogg",
+      "sha256": "c154b06eaaa652b76a4bd4efa6617f86d8a8cca1c013b2500821fcd9c5e202e6"
+    },
+    {
+      "id": "72947755219782",
+      "name": "burst3",
+      "file": "sfx/burst3.ogg",
+      "sha256": "36e0ce96487ba64783e68c6897520e7727bfc5224b6da8c26531c20864db3778"
+    },
+    {
+      "id": "106952276725750",
+      "name": "hit1",
+      "file": "sfx/hit1.ogg",
+      "sha256": "b2aa3d68d67f829d01013e94fda2cce20ca6c0ed2cbf802f699081230c44f2eb"
+    },
+    {
+      "id": "134064603839321",
+      "name": "hit2",
+      "file": "sfx/hit2.ogg",
+      "sha256": "08cd44b92277644a5ed0ffa470eb642ebe2c7e5e5e3fc49e692dc1104319d312"
+    },
+    {
+      "id": "92638776193349",
+      "name": "hit3",
+      "file": "sfx/hit3.ogg",
+      "sha256": "596f8ee21d8b5164d5715652e2d3888c40bc74703e7ab75b3da6e9befa92671e"
+    },
+    {
+      "id": "117081254542943",
+      "name": "hit4",
+      "file": "sfx/hit4.ogg",
+      "sha256": "43b8025e27639572f44bf9be7a10982492f7f3fc2a359066571b0c1a391200c1"
+    },
+    {
+      "id": "100028072827312",
+      "name": "beatdownrun",
+      "file": "sfx/beatdownrun.ogg",
+      "sha256": "3bcb727ce97e0a974cb652722313b2b5a87de32f61acfd58918f1e1403703282"
+    },
+    {
+      "id": "100954087382864",
+      "name": "launch",
+      "file": "sfx/launch.ogg",
+      "sha256": "28d0cf13bb4927866b5b165f2875c52c7a47f6564ca62b202c886350a42f262b"
+    },
+    {
+      "id": "124020489173765",
+      "name": "beatdownswings",
+      "file": "sfx/beatdownswings.ogg",
+      "sha256": "2cee5a784db3660c6525142a17beddbc85032f57531d6aa498d1c189838ea241"
+    },
+    {
+      "id": "139214523714025",
+      "name": "beatdownhit1",
+      "file": "sfx/beatdownhit1.ogg",
+      "sha256": "86c354c42545eae83fd9162cc41a7a02fef03ad12890492f7f35b9493f83341d"
+    },
+    {
+      "id": "83455997419131",
+      "name": "beatdownhit2",
+      "file": "sfx/beatdownhit2.ogg",
+      "sha256": "8b3c4055100b9a83ae22fdbbeb887b7b0494fde36eaffb9200eddbab66936046"
+    },
+    {
+      "id": "128755906526956",
+      "name": "beatdownhit3",
+      "file": "sfx/beatdownhit3.ogg",
+      "sha256": "bf21c20b26e021921abb23ee715031afb9f5f0e27d6c6a5d599c0435e03a1245"
+    },
+    {
+      "id": "72828962063592",
+      "name": "beatdownhit4",
+      "file": "sfx/beatdownhit4.ogg",
+      "sha256": "cc54d30a66b5419b0ca74cbbb9e320584b6266b960e33ca3b6611789e8776fbf"
+    },
+    {
+      "id": "111628499425427",
+      "name": "airkbland",
+      "file": "sfx/airkbland.ogg",
+      "sha256": "be736a22f96807c9a0b242f2793091231d169b630097184a4beeb35331f2863f"
+    },
+    {
+      "id": "73379928869565",
+      "name": "GroundKB",
+      "file": "sfx/GroundKB.ogg",
+      "sha256": "661034c787eb95e75bad2b4a413581e450cfb6f29cd8d50ae4ffb23c17c3768a"
+    },
+    {
+      "id": "124038072463322",
+      "name": "HeavyHitLarge",
+      "file": "sfx/HeavyHitLarge.ogg",
+      "sha256": "f94986e833e1b66e95009d7fe6442dd4d1411f2f61f8b5510c546557dcb39c2e"
+    },
+    {
+      "id": "125810591628232",
+      "name": "hitstop",
+      "file": "sfx/hitstop.ogg",
+      "sha256": "4d6762a12bd511e9508036763c51ad01442c191ca7979c9dd74380522a512a6d"
+    },
+    {
+      "id": "112003250675102",
+      "name": "snd_Impacts_SIMPLE_003",
+      "file": "sfx/snd_Impacts_SIMPLE_003.ogg",
+      "sha256": "863e82d9647af65515423e08cfa677c90b80019d954157c8ef7f7575ee81f61e"
+    },
+    {
+      "id": "122674220220822",
+      "name": "snd_HeadBreak2",
+      "file": "sfx/snd_HeadBreak2.ogg",
+      "sha256": "2d4ac3c5b1e4def3842218c413b3939a84ac4a403bce926a0ce08cf4c13dcc01"
+    },
+    {
+      "id": "76952488788467",
+      "name": "snd_LimbBreak",
+      "file": "sfx/snd_LimbBreak.ogg",
+      "sha256": "60762328640320da38d8ae575a251ca3d63a70cdd796606b6dcc038fae60712c"
+    },
+    {
+      "id": "123144722262732",
+      "name": "CardSelectSlide",
+      "file": "sfx/CardSelectSlide.ogg",
+      "sha256": "a7941aa056f86f8c9a7a8aa7f2f89c01f09639f7d4db9c30cb79b3998d7030fb"
+    },
+    {
+      "id": "71524651711388",
+      "name": "CardHover",
+      "file": "sfx/CardHover.ogg",
+      "sha256": "f2c64605d017e4b49e8f92c7771059bc44611463619da9f9890ca8025b50c0de"
+    }
+  ]
+}
