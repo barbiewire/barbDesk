@@ -1,69 +1,59 @@
 # barbDesk
 
-If you got one of my open-source Roblox projects, its sounds probably won't play for you: they're uploaded to my account, and Roblox only lets audio play in experiences its owner allows.
+So you grabbed one of my open source projects and none of the sounds play. That's because they're uploaded to my group, and Roblox won't let audio play in a game unless the owner allows it.
 
-barbDesk fixes that in one go. It:
+This fixes that. You run the exe with your place open in Studio and it:
 
-1. finds your open Roblox Studio,
-2. works out which of my projects the place is (from the `osName` attribute on `ReplicatedStorage`),
-3. finds every one of my sounds the place still uses,
-4. downloads the original audio files into `sfx/<project name>/` next to where you ran it,
-5. uploads them to **your** account or group with your Open Cloud API key,
-6. swaps the old IDs for your new ones in Sounds, AudioPlayers and scripts.
+- figures out which of my projects you have (it reads the `osName` attribute on ReplicatedStorage, so don't delete that)
+- finds all my sounds that are still in your place
+- downloads the original files into a `sfx` folder
+- uploads them to your account or group
+- swaps the old ids for your new ones everywhere (Sounds, AudioPlayers, scripts)
 
-The swap is one undo step, so Ctrl+Z in Studio reverts it.
+If you don't like the result, just Ctrl+Z in Studio. The whole swap is one undo.
 
-## What you need
+## Before you run it
 
-- Windows and an up-to-date Roblox Studio with your place open.
-- Studio's MCP server turned on: **Assistant → Settings → MCP Servers → Enable Studio as MCP server**. barbDesk uses Studio's own `StudioMCP.exe` to read and edit the place. It doesn't need a plugin.
-- An **Open Cloud API key** that can upload audio for the account or group that owns your experience.
+You need Studio open with your place, and Studio's MCP server turned on. That's in Assistant > Settings > MCP Servers > Enable Studio as MCP server. barbDesk talks to Studio through that, so there's no plugin to install.
 
-### Making the API key
+You also need an Open Cloud API key, because it has to upload audio for you.
 
-1. Go to [create.roblox.com/dashboard/credentials](https://create.roblox.com/dashboard/credentials) and click **Create API Key**.
-   - If your experience belongs to a group, switch to that group first (top left), so the key can upload for the group.
-2. Under **Access Permissions**, add the **Assets** API with **Read** and **Write**.
-3. Under **Security**, add your IP address (or `0.0.0.0/0`) to the allowed IPs.
-4. Save, then copy the key.
+Making one:
 
-barbDesk asks for the key when it needs it and never saves it. To skip the prompt, put it in the `BARBDESK_KEY` environment variable instead.
+1. Go to https://create.roblox.com/dashboard/credentials and hit Create API Key. If your game is owned by a group, switch to the group first (top left), otherwise the key can't upload for it.
+2. Add the **Assets** API and give it Read and Write.
+3. Add your IP to the allowed IPs (or 0.0.0.0/0 if you don't care).
+4. Save it and copy the key.
 
-## Using it
+barbDesk asks for the key when it needs it and doesn't save it anywhere. If you don't want to paste it every time, set it as `BARBDESK_KEY` in your environment variables.
 
-1. Download `barbDesk.exe` from [Releases](../../releases).
-2. Put it in the folder you keep your project files in (the `sfx` folder goes there).
-3. Open your place in Studio, then run `barbDesk.exe`.
+## Running it
 
-It asks before uploading and before changing the place. Sounds it already uploaded are remembered in `sfx/<project>/uploaded.json`, so running it again won't upload them twice.
+Grab `barbDesk.exe` from [Releases](../../releases), drop it in your project folder (the `sfx` folder ends up next to it) and open it.
 
-Options:
+It'll ask before it uploads anything and before it touches your place. It also remembers what it already uploaded (`sfx/<project>/uploaded.json`), so if something fails halfway you can just run it again.
 
-| Option | What it does |
-|---|---|
-| `--dry-run` | Scan and download only. Nothing is uploaded or changed. |
-| `--yes` | Don't ask, just do it (uploads as the experience's owner). |
-| `--project <folder>` | Put the `sfx` folder somewhere else. |
+Some options if you run it from a terminal:
 
-## Notes
+- `--dry-run` scans and downloads but doesn't upload or change anything
+- `--yes` skips the questions
+- `--project <folder>` puts the sfx folder somewhere else
 
-- Uploaded audio counts toward your account's monthly audio upload limit.
-- Upload as the creator that **owns the experience**. Audio owned by someone else won't play in it unless you share it.
-- The sounds in this repo are only for use with the projects they ship with.
+## Stuff to know
 
-## Supported projects
+Uploads count toward your monthly audio limit on Roblox. If you hit it, wait for it to reset and run barbDesk again, it picks up where it stopped.
 
-| Project (`osName`) | Sounds |
-|---|---|
-| Battlegrounds Framework V2 - Stage one [BAREBONES] | 25 |
+Upload as whoever owns the game. If you upload to your own account but the game belongs to a group, the sounds still won't play.
 
-## Adding a project (maintainer)
+The sounds in here are only meant to be used with the projects they came with. Please don't reupload them for other stuff.
 
-1. Set `ReplicatedStorage` attribute `osName` in the project's place.
-2. Add `projects/<folder>/sfx/*.ogg` and `projects/<folder>/manifest.json` (`osName`, and per sound: `id`, `name`, `file`, `sha256`).
-3. Add an entry to `projects/index.json`.
+## Projects it works with right now
 
-No new release is needed: the exe reads the index from this repo every run.
+- Battlegrounds Framework V2 - Stage one [BAREBONES]
+
+## For me (adding a project)
+
+Set `osName` on ReplicatedStorage in the project, put the sounds in `projects/<folder>/sfx/`, write a `manifest.json` (osName, then id / name / file / sha256 for each sound) and add it to `projects/index.json`. The exe reads the list from this repo every time, so there's no need for a new release.
 
 ## Building
 
@@ -71,4 +61,4 @@ No new release is needed: the exe reads the index from this repo every run.
 cargo build --release
 ```
 
-The exe lands in `target/release/barbDesk.exe`. Set `BARBDESK_SOURCE` to a local copy of this repo to test manifest changes before pushing.
+If you're testing manifest changes, set `BARBDESK_SOURCE` to your local copy of the repo and it'll read from there instead of GitHub.
